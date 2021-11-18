@@ -7,7 +7,7 @@ import {Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
 import {List} from 'reactstrap'
 
-export default function Wallet (){
+export default function Transactions (){
 
     const [balance,setBalance] =useState(0);
     const [amount,setAmount] = useState(0);
@@ -48,7 +48,7 @@ export default function Wallet (){
     currencyCode: "INR",
     countryCode: "IN"
     },
-    shippingAddressRequired:true,
+    shippingAddressRequired:false,
     callbackIntents:['PAYMENT_AUTHORIZATION']
     }
 
@@ -72,8 +72,8 @@ const updateBalance =(e) =>{
      style={{
          backgroundColor: '#eef1f1',
          borderColor: '#333',
-         width:"62%",
-         margin:"auto",
+        //  width:"62%",
+        margin:"auto",
        }}
      >
     <Card
@@ -97,24 +97,28 @@ const updateBalance =(e) =>{
   <Card
    body
    style={{
-       backgroundColor: '#f2f2f2',
+       backgroundColor: '#ffffff',
        borderColor: '#333',
        fontColor:'black',
-       textAlign:'center'
+       textAlign:'center',
+       margin:'auto',
+       width:'80%',
+      //  position:'relative',
+       marginTop:'15px'
        
      }}>
 
-  <Card body style={{margin:"auto",borderColor: '#333',backgroundColor:"#ffffff", position:"relative"}}>
+  {/* <Card body style={{margin:"auto",borderColor: '#333',backgroundColor:"#ffffff"}}> */}
    <Card color="warning" style={{fontSize:"30px", margin:"-16px"}}>Add Money to your wallet</Card>   
-                <FormGroup row style={{marginTop:"40px"}}>
+                <FormGroup row style={{marginTop:"40px",}}>
                   <Label
                     for="walletAmount"
-                    sm={5}
+                    sm={6}
                     
                     >           
-                    <h5>Enter Amount :</h5>
+                    <h5>Enter Amount</h5>
                   </Label>
-                  <Col sm={7}>
+                  <Col sm={4}>
                     <Input
                       id="walletAmount"
                       name="amount"
@@ -136,9 +140,10 @@ const updateBalance =(e) =>{
                   >
                        <GooglePayButton
                         environment="TEST"
-                        buttonSizeMode="small"
+                        buttonSizeMode="fill"
                         paymentRequest ={paymentRequest}
-              
+                        buttonType="pay"
+                        // style={{width: "10%", height: 40}}
               
                         onLoadPaymentData={paymentData =>{
                          // console.log('TODO: send order to server', paymentData.paymentMethodData,paymentRequest);
@@ -179,7 +184,7 @@ const updateBalance =(e) =>{
         style={{
         backgroundColor: '#ffffff',
         borderColor: '#333',
-        marginTop:"10px", 
+        margin:"15px",
         }}
         >
         <CardTitle tag="h3" style={{ textAlign: 'center'}}>
@@ -200,7 +205,7 @@ const updateBalance =(e) =>{
         </li>
         </List>
         </Card>
-  </Card>
+  {/* </Card> */}
 
    </CardColumns>
       </div>

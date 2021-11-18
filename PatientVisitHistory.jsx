@@ -46,12 +46,13 @@ export default class PatientVisitHistory extends React.Component {
 				// prefix: "",
 				labelFontSize: 18,
 				labelTextAlign: "right",
+				title: "Patient Count",
 			},
 			axisX: {
 				labelFontSize: 18,
 				showInLegend: "true",
 				valueFormatString: "####",
-				// title: "Date",
+				title: "Year",
 			},
 			toolTip: {
 				shared: true

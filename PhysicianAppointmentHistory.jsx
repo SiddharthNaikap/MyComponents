@@ -126,7 +126,7 @@ export default class PhysicianAppointmentHistory extends React.Component {
 			 style={{
 				 backgroundColor: '#eef1f1',
 				 borderColor: '#333',
-				 width:"80%",
+				//  width:"80%",
 				 margin:"auto",
 			   }}>
 			<Card

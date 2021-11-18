@@ -7,7 +7,7 @@ import {Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
 import {List} from 'reactstrap'
 
-export default function Transactions (){
+export default function Wallet (){
 
     const [balance,setBalance] =useState(0);
     const [amount,setAmount] = useState(0);
